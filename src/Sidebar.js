@@ -8,6 +8,9 @@ const Sidebar = () => {
     <aside className={`sidebar show-sidebar`}>
       <div className="sidebar-header">
         <img src={logo} className="logo" alt="coding additct" />
+        <button className="close-btn">
+          <FaTimes />
+        </button>
       </div>
     </aside>
   );

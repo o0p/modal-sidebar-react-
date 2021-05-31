@@ -12,9 +12,30 @@ const AppProvider = ({ children }) => {
   const closeSidebar = () => {
     setIsSidebarOpen(false);
   };
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
 
-  return <AppContext.Provider value="hello">{children}</AppContext.Provider>;
+  return (
+    <AppContext.Provider
+      value={{
+        isModalOpen,
+        isSidebarOpen,
+        openModal,
+        openSidebar,
+        closeModal,
+        closeSidebar,
+      }}>
+      {children}
+    </AppContext.Provider>
+  );
 };
-//custo hook
+//custom hook
+export const useGlobalContext = () => {
+  return useContext(AppContext);
+};
 
 export { AppContext, AppProvider };
